@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Card</title>
+  <style>
+    { box-sizing: border-box; }
+     body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #e0ded4;
+            padding-bottom: 70px;
+    }
+
+     .top-tabs {
+           display: flex;
+           background: #d8c8a9;
+           font-size: 1.2em;
+    }
+
+     .top-tabs div {
+           flex: 1;
+           text-align: center;
+           padding: 12px 0;
+           font-weight: bold;
+           color: #777;
+    }
+
+     .top-tabs .active {
+           color: #1a2c55;
+    }
+
+    .profile {
+      background: #a28f6e;
+      color: white;
+      padding: 16px;
+      position: relative;
+    }
+
+    .top-right-icons {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .top-right-icons img {
+      width: 20px;
+    }
+
+    .profile-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .profile-top img.profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: white;
+      padding: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .profile-info {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .profile-info h2 {
+      margin: 0;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .verified-badge {
+      width: 14px;
+      height: 14px;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
+    .location-social {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    .location-social .left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .location-social .right img {
+      width: 20px;
+      margin-left: 8px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .tabs {
+      display: flex;
+      background: #a28f6e;
+      font-weight: bold;
+      color: #ddd;
+    }
+
+    .tabs label {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+
+    #tab-posts:checked ~ .tabs label[for="tab-posts"],
+    #tab-timeline:checked ~ .tabs label[for="tab-timeline"],
+    #tab-collection:checked ~ .tabs label[for="tab-collection"] {
+      color: #fff;
+      border-bottom: 3px solid #0b89ff;
+    }
+
+    .content {
+      background: #ccc;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 12px;
+    }
+
+    #tab-posts:checked ~ .content #content-posts,
+    #tab-timeline:checked ~ .content #content-timeline,
+    #tab-collection:checked ~ .content #content-collection {
+      display: block;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 5px;
+    }
+
+    .posts-grid div {
+      background: #eee;
+      height: 100px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #8a775a;
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      text-align: center;
+      color: white;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .bottom-nav img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .bottom-nav .active {
+      border: 2px solid #339cff;
+      border-radius: 50%;
+      padding: 3px;
+    }
+
+    @media (min-width: 768px) {
+      .profile-top img.profile-pic {
+        width: 80px;
+        height: 80px;
+      }
+
+      .tabs label {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-tabs">
+    <div class="active">My Space</div>
+    <div>My Netowrk</div>
+  </div>
+  <div class="profile">
+    <div class="top-right-icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Share">
+      <img src="https://cdn-icons-png.flaticon.com/512/3916/3916631.png" alt="Edit">
+    </div>
+    <div class="profile-top">
+      <img class="profile-pic" src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg" alt="Profile">
+      <div class="profile-info">
+        <h2>
+          Kushi
+          <img class="verified-badge" src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verified">
+        </h2>
+        <strong>Computer science student | Web Developer</strong>
+        <p>Passionate Web Developer focused on building responsive and user friendly websites</p>
+      </div>
+    </div>
+    <div class="location-social">
+      <div class="left">
+        <span>400K Followers</span>
+        <span>900 Followed</span>
+        <span>📍 Hyderabad</span>
+      </div>
+      <div class="right">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Web">
+      </div>
+    </div>
+  </div>
+  <input type="radio" name="tabs" id="tab-posts" checked>
+  <input type="radio" name="tabs" id="tab-timeline">
+  <input type="radio" name="tabs" id="tab-collection">
+  <div class="tabs">
+    <label for="tab-posts">Posts (11)</label>
+    <label for="tab-timeline">Timeline</label>
+    <label for="tab-collection">Collection</label>
+  </div>
+  <div class="content">
+    <div class="tab-content" id="content-posts">
+      <div class="posts-grid">
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+    <div class="tab-content" id="content-timeline">
+      <p>
+        <h2> EDUCATION</h2>
+        <p>B.Tech in Computer Science — 2022 to 2026</p>
+        <p> Intermediate in NTR Educational Institutions</p>
+        <h2> EXPERIENCE </h2>
+        <p>Web Development Intern at Techsonix Solutions Company — April 2025 to May 2025</p>
+        <p>CyberSecurity Intern at RedyNox - May 2025 to July 2025</p> 
+      </p>
+    </div>
+    <div class="tab-content" id="content-collection">
+      <p>
+        <h2>CERTIFICATES</h2>
+      <h3>  C++ Institute</h3>
+            <p>-CLA:Programming essentials in C</p>
+              <h3>Python Institute</h3>
+            <p>-PCAP:Programming essentials in python</p>
+            <h3> Infosys/Spring board</h3>
+-Internet of Things 101<br>
+-IOT Raspberry Pi with Projects<br>
+-Intro to AI<br>
+-Intro to ChatGPT<br>
+-Intro to natural language<br>
+-Intro to Deep Learning<br>
+</p>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="Home"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/751/751463.png" alt="Search"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Add"></a>
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Location"></a>
+    <a href="#"><img class="active" src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Profile"></a>
+  </div>
+
+</body>
+</html>
